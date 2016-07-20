@@ -1,5 +1,8 @@
 package com.IceMerman.PowerGems.handler;
 
+import com.IceMerman.PowerGems.references.Reference;
+import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;
@@ -8,7 +11,7 @@ public class ConfigHandler {
 
     public static Configuration cfg;
 
-    private static final String CATEGORY_USELESS = "useless stuff";
+    public static final String CATEGORY_USELESS = "useless stuff";
 
         public static int EXAMPLE_VALUE;
         private static final String EXAMPLE_NAME = "example";
@@ -20,28 +23,28 @@ public class ConfigHandler {
 
     public static void init(File file){
 
-        cfg = new Configuration(file);
-
-        //TODO: create a class that set the default values for the config
-
-        EXAMPLE_VALUE = EXAMPLE_DEFAULT;
-        SOME_TEXT_VALUE = SOME_TEXT_DEFAULT;
-        //Set before the parameters in case of faults while loading the file
-
-        try{
-            cfg.load();
-
-            EXAMPLE_VALUE = cfg.get(CATEGORY_USELESS, EXAMPLE_NAME, EXAMPLE_DEFAULT, "Comment about the value").getInt(EXAMPLE_DEFAULT);
-            SOME_TEXT_VALUE = cfg.get(CATEGORY_USELESS, SOME_TEXT_NAME, SOME_TEXT_DEFAULT).getString();
-
-        }catch (Exception e){
-
-        }finally {
-            if(cfg.hasChanged()) {
-                cfg.save();
-            }
+        if(cfg == null){
+            cfg = new Configuration(file);
         }
-        System.out.println("[Power Gems] Configuration successfully saved");
+    }
+
+    @SubscribeEvent
+    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event){
+        if(event.modID.equalsIgnoreCase(Reference.MOD_ID)){
+            loadConfiguration();
+        }
+    }
+
+    public void loadConfiguration(){
+        //Set before the parameters in case of faults while loading the file
+        EXAMPLE_VALUE = cfg.get(CATEGORY_USELESS,EXAMPLE_NAME,EXAMPLE_DEFAULT).getInt();
+        SOME_TEXT_VALUE = cfg.get(CATEGORY_USELESS,SOME_TEXT_NAME,SOME_TEXT_DEFAULT).getString();
+
+        if(cfg.hasChanged()){
+            cfg.save();
+        }
+
+
     }
 
 }
