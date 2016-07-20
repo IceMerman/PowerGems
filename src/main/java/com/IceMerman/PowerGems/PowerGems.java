@@ -1,6 +1,7 @@
 package com.IceMerman.PowerGems;
 
 import com.IceMerman.PowerGems.handler.ConfigHandler;
+import com.IceMerman.PowerGems.init.ModItems;
 import com.IceMerman.PowerGems.proxy.Iproxy;
 import com.IceMerman.PowerGems.references.Reference;
 import com.IceMerman.PowerGems.utility.LogHelper;
@@ -26,6 +27,7 @@ public class PowerGems {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
         LogHelper.info("Pre initialization complete");
+        ModItems.init();
     }
 
     @Mod.EventHandler
