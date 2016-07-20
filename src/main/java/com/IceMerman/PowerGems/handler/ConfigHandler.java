@@ -25,6 +25,7 @@ public class ConfigHandler {
 
         if(cfg == null){
             cfg = new Configuration(file);
+            loadConfiguration();
         }
     }
 
@@ -35,7 +36,7 @@ public class ConfigHandler {
         }
     }
 
-    public void loadConfiguration(){
+    private static void loadConfiguration(){
         //Set before the parameters in case of faults while loading the file
         EXAMPLE_VALUE = cfg.get(CATEGORY_USELESS,EXAMPLE_NAME,EXAMPLE_DEFAULT).getInt();
         SOME_TEXT_VALUE = cfg.get(CATEGORY_USELESS,SOME_TEXT_NAME,SOME_TEXT_DEFAULT).getString();

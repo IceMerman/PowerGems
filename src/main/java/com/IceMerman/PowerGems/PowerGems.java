@@ -3,6 +3,8 @@ package com.IceMerman.PowerGems;
 import com.IceMerman.PowerGems.handler.ConfigHandler;
 import com.IceMerman.PowerGems.proxy.Iproxy;
 import com.IceMerman.PowerGems.references.Reference;
+import com.IceMerman.PowerGems.utility.LogHelper;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -22,15 +24,19 @@ public class PowerGems {
     public void PreInit(FMLPreInitializationEvent event){
 
         ConfigHandler.init(event.getSuggestedConfigurationFile());
+        FMLCommonHandler.instance().bus().register(new ConfigHandler());
+        LogHelper.info("Pre initialization complete");
     }
 
     @Mod.EventHandler
     public void Init(FMLInitializationEvent event){
+        LogHelper.info("Initialization complete");
 
     }
 
     @Mod.EventHandler
     public void PostInit(FMLPostInitializationEvent event){
+        LogHelper.info("Post initialization complete");
 
     }
 
