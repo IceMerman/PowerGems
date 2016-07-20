@@ -6,6 +6,8 @@ import java.io.File;
 
 public class ConfigHandler {
 
+    public static Configuration cfg;
+
     private static final String CATEGORY_USELESS = "useless stuff";
 
         public static int EXAMPLE_VALUE;
@@ -18,7 +20,7 @@ public class ConfigHandler {
 
     public static void init(File file){
 
-        Configuration cfg = new Configuration(file);
+        cfg = new Configuration(file);
 
         //TODO: create a class that set the default values for the config
 
