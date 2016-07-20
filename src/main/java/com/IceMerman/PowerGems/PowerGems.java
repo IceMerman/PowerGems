@@ -1,6 +1,6 @@
 package com.IceMerman.PowerGems;
 
-import com.IceMerman.PowerGems.config.ConfigHandler;
+import com.IceMerman.PowerGems.handler.ConfigHandler;
 import com.IceMerman.PowerGems.proxy.Iproxy;
 import com.IceMerman.PowerGems.references.Reference;
 import cpw.mods.fml.common.Mod;

@@ -1,4 +1,4 @@
-package com.IceMerman.PowerGems.config;
+package com.IceMerman.PowerGems.handler;
 
 import net.minecraftforge.common.config.Configuration;
 
@@ -37,7 +37,9 @@ public class ConfigHandler {
         }catch (Exception e){
 
         }finally {
-            cfg.save();
+            if(cfg.hasChanged()) {
+                cfg.save();
+            }
         }
         System.out.println("[Power Gems] Configuration successfully saved");
     }
