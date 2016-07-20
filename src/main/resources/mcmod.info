@@ -1,0 +1,21 @@
+[
+{
+  "modid": "PowerGems",
+  "name": "Power Gems",
+  "description": "Discover the power of the ancient gems",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+  "IceMerman"
+  ],
+  "credits": "My brother for the artist work",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent": "",
+  "dependencies": [
+  ]
+}
+]
