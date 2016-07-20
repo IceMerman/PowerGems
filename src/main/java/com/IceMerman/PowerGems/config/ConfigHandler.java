@@ -5,7 +5,7 @@ import net.minecraftforge.common.config.Configuration;
 import java.io.File;
 
 public class ConfigHandler {
-    //TODO: Move these values to reference package
+
     private static final String CATEGORY_USELESS = "useless stuff";
 
         public static int EXAMPLE_VALUE;
