@@ -26,8 +26,9 @@ public class PowerGems {
 
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
-        LogHelper.info("Pre initialization complete");
         ModItems.init();
+        LogHelper.info("Pre initialization complete");
+
     }
 
     @Mod.EventHandler

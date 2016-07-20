@@ -10,6 +10,6 @@ public class ModItems {
 
     //initialization
     public static void init(){
-        GameRegistry.registerItem(UnshapedGem,"Unshaped Game");
+        GameRegistry.registerItem(UnshapedGem,"UnshapedGem");
     }
 }

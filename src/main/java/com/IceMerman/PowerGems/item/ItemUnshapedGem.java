@@ -4,6 +4,7 @@ public class ItemUnshapedGem extends PowerGemsItem {
 
     public ItemUnshapedGem(){
         super();
+        this.setUnlocalizedName("UnshapedGem");
     }
 
 }
