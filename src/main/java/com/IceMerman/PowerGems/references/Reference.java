@@ -11,5 +11,6 @@ public class Reference {
     public static final String CLIENT_PROXY_CLASS = "com.IceMerman.PowerGems.proxy.ClientProxy";
     public static final String GUI_FACTORY_CLASS = "com.IceMerman.PowerGems.client.gui.GuiFactory";
     //public static final CreativeTabs POWERGEMS_TAB = ;
+    // TODO check references
 
 }
